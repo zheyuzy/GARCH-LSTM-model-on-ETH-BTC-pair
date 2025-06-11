@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project implements a hybrid quantitative trading strategy for the ETH/BTC cryptocurrency pair, combining traditional econometric models (EGARCH) with modern deep learning (LSTM with attention). The goal is to exploit mean-reverting behavior in the ETH/BTC spread, while accounting for volatility clustering and regime changes.
+This project implements a hybrid quantitative trading strategy for the ETH/BTC cryptocurrency pair, combining traditional econometric models (EGARCH) with modern deep learning (LSTM with attention) and Altcoin Season Index (ASI) regime-switching filter. The goal is to exploit mean-reverting behavior in the ETH/BTC spread, while accounting for volatility clustering and regime changes.
 
 Pair trading is a market-neutral strategy that seeks to profit from the relative price movement between two correlated assets. ETH and BTC are the two largest cryptocurrencies, making their relationship a rich source for statistical arbitrage.
 
@@ -23,6 +23,7 @@ Pair trading is a market-neutral strategy that seeks to profit from the relative
    - The model is trained using both classification and regression objectives.
 6. **Backtesting:**  
    - The model's signals are used to simulate trades, including transaction costs.  
+   - Integrated ASI into GARCH-LSTM framework.
    - Performance metrics such as Sharpe ratio, total return, and drawdown are calculated.
 7. **Visualization:**  
    - The script generates interactive plots for prices, returns, volatility, and strategy performance.
@@ -42,6 +43,8 @@ Pair trading is a market-neutral strategy that seeks to profit from the relative
   Captures volatility clustering and leverage effects, which are common in crypto markets. EGARCH is chosen for its ability to model asymmetric volatility responses.
 - **LSTM with Attention:**  
   LSTM networks are well-suited for time series forecasting. The attention mechanism allows the model to focus on the most relevant time steps, improving signal quality.
+- **ASI (Altcoin Season Index) Filtering:**  
+  ASI implemented as a critical signal validation layer to capture the regime shifting.
 
 ## Customization
 
@@ -59,6 +62,7 @@ After running the script, you will see:
 - Volatility comparison (realized vs. EGARCH)
 - Training curves for the LSTM
 - Backtest equity curve
+- Integrate ASI into framework
 - Performance metrics (Sharpe ratio, total return, max drawdown)
 
 ## Troubleshooting & FAQ
