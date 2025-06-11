@@ -44,7 +44,7 @@ Pair trading is a market-neutral strategy that seeks to profit from the relative
 - **LSTM with Attention:**  
   LSTM networks are well-suited for time series forecasting. The attention mechanism allows the model to focus on the most relevant time steps, improving signal quality.
 - **ASI (Altcoin Season Index) Filtering:**  
-  ASI is implemented as a critical signal validation layer to capture the regime shifting.
+  ASI is implemented as a critical signal validation layer to capture the regime shifting with 30-day simple moving average of the ETH/BTC spread.
 
 ## Customization
 
